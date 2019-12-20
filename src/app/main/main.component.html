@@ -1,9 +1,20 @@
 <nb-layout>
-  <nb-layout-header fixed>Company Name</nb-layout-header>
+  <nb-layout-header fixed> 
+      <nb-search type="rotate-layout"></nb-search>
+  </nb-layout-header>
 
-  <nb-sidebar>Sidebar Content</nb-sidebar>
+  <nb-sidebar  >Sidebar Content</nb-sidebar>
+  <nb-layout-header  subheader>
+    <nb-actions size="small">
+      </nb-actions>
+  </nb-layout-header>
 
   <nb-layout-column>
-    Page Content <button nbButton>Hello World</button>
+    <nb-card>
+      <nb-card-body class="example-items-rows">
+        <input type="text" nbInput placeholder="Text field" />
+        <input type="text" nbInput placeholder="Disabled Text field" disabled />
+      </nb-card-body>
+    </nb-card>
   </nb-layout-column>
 </nb-layout>

@@ -7,17 +7,28 @@ import {
   NbSidebarModule,
   NbLayoutModule,
   NbButtonModule,
-  NbThemeModule
+  NbCardModule,
+  NbInputModule,
+  NbSearchModule,
+  NbActionsModule,
+  NbIconModule,
 } from "@nebular/theme";
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [MainComponent],
   imports: [
     CommonModule,
+    NbInputModule,
+    NbSearchModule,
     MainRoutingModule,
+    NbActionsModule,
     NbSidebarModule,
     NbLayoutModule,
-    NbButtonModule
+    NbButtonModule,
+    NbCardModule,
+    NbIconModule,
+    NbEvaIconsModule
   ]
 })
 export class MainModule {}
