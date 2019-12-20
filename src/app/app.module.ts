@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NbThemeModule } from '@nebular/theme';
+import { NbThemeModule, NbButtonModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -11,8 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    NbThemeModule,
-    AppRoutingModule
+    NbThemeModule.forRoot(),
+    AppRoutingModule,
+    NbSidebarModule.forRoot(),
+    NbLayoutModule,
+    NbButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
