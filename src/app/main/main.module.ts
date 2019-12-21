@@ -11,13 +11,18 @@ import {
   NbInputModule,
   NbSearchModule,
   NbActionsModule,
-  NbIconModule,
+  NbIconModule
 } from "@nebular/theme";
-import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbEvaIconsModule } from "@nebular/eva-icons";
+import { TestComponent } from "./test/test.component";
+import { BaseEditorComponent } from "../editor/base-editor-component";
+import { FormsModule } from "@angular/forms";
+import { FormTestComponent } from './form-test/form-test.component';
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [MainComponent, TestComponent, FormTestComponent],
   imports: [
+    FormsModule,
     CommonModule,
     NbInputModule,
     NbSearchModule,
