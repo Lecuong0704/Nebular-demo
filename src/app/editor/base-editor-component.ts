@@ -4,7 +4,7 @@ export class optionsValidate {
 }
 
 export abstract class   BaseEditorComponent<TOption> {
-  constructor(private options?: TOption) {}
+  constructor(public options?: TOption) {}
 
   public _value;
   getValue() {

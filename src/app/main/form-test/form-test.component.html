@@ -1,6 +1,6 @@
 <form>
   <app-input-string
-    label="Họ và tên"
+    label="Họ và tên:"
     placeholder="Full name"
     data="name"
     require="true"
@@ -9,41 +9,51 @@
     #apptest
   ></app-input-string>
 
-  <app-input-string
-    label="Số điện thoại"
-    placeholder="Number"
+  <app-input-number
+    label="Số điện thoại:"
+    placeholder="Phone number"
     require="true"
-    mark="+00-000-000-000"
+    mask="+00-000-000-000"
     #apptest2
-  ></app-input-string>
+  ></app-input-number>
   <app-input-string
-    label="Địa chỉ"
+    label="Địa chỉ:"
     placeholder="Address"
     disabled="true"
     #apptest3
   ></app-input-string>
   <app-input-number
-    label="Số tiền"
+    label="Số tiền:"
     type="number"
     placeholder="Amount"
-    mark="separator"
+    mask="separator"
+    suffix=" VNĐ"
     thousandSeparator="."
     #appInputNumber
   ></app-input-number>
-  <app-input-string
-    label="Giờ"
-    placeholder="Time"
-    mark="00:00"
-    #apptest5
-  ></app-input-string>
   <app-input-date
-    label="Ngày"
+    label="Ngày:"
     type="number"
-    placeholder="Date"
+    placeholder="Click to choose"
+    format="dd-MM-yyyy"
     min="2019-12-10"
     max="2019-12-30"
-    format="dd-MM-yyyy"
     #appInputDate
   ></app-input-date>
+  <app-input-checkbox
+    label="Grounp checkbox:"
+    key="Checkbox test"
+    [options]="options"
+    group="true"
+    #appInputCheckbox
+    ></app-input-checkbox>
+  <app-input-checkbox
+    key="Checkbox test"
+    checked="false"
+    #appInputCheckbox2
+    ></app-input-checkbox>
 </form>
-<button (click)="onclick()">click</button>
+<!-- <button (click)="onclick()">click</button> -->
+<button (click)="onclick()" class="mt-3 float-right" nbButton>
+  <nb-icon icon="star"></nb-icon>Check value
+</button>

@@ -13,7 +13,8 @@ import {
   NbActionsModule,
   NbIconModule,
   NbDatepicker,
-  NbDatepickerModule
+  NbDatepickerModule,
+  NbCheckboxModule
 } from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { BaseEditorComponent } from "../editor/base-editor-component";
@@ -25,11 +26,12 @@ import { InputStringComponent } from './input-string/input-string.component';
 import { InputDateComponent } from './input-date/input-date.component'
 import { NbDateFnsDateModule } from '@nebular/date-fns';
 import { NbMomentDateModule } from '@nebular/moment';
+import { InputCheckboxComponent } from './input-checkbox/input-checkbox.component';
 
-export let options: Partial<IConfig> | (() => Partial<IConfig>);
+// export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
-  declarations: [MainComponent, FormTestComponent, InputNumberComponent, InputStringComponent, InputDateComponent],
+  declarations: [MainComponent, FormTestComponent, InputNumberComponent, InputStringComponent, InputDateComponent, InputCheckboxComponent],
   imports: [
     FormsModule,
     CommonModule,
@@ -44,9 +46,10 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     NbIconModule,
     NbDatepickerModule,
     NbDateFnsDateModule,
+    NbCheckboxModule,
     // NbMomentDateModule,
     NbEvaIconsModule,
-    NgxMaskModule.forRoot(options)
+    NgxMaskModule.forRoot()
   ]
 })
 export class MainModule {}

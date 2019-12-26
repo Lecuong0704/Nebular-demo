@@ -18,6 +18,7 @@ export class InputNumberComponent extends BaseEditorComponent<any>
   @Input() minLength: number;
   @Input() maxLength: number;
   @Input() mask: string = "separator";
+  @Input() suffix: string = "";
   @Input() thousandSeparator: string = ".";
   public showMessage = false;
   public isRequire: boolean = false;
@@ -56,8 +57,11 @@ export class InputNumberComponent extends BaseEditorComponent<any>
     }
     if (this.mask == "separator.2") {
       v = this.convertStringToNumber(v);
-    } else {
+    } else if(this.mask == "separator") {
       v = Number(v);
+    }else{
+      // this.thousandSeparator= '',
+      
     }
     this._value = v;
   }
