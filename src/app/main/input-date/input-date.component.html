@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="{{ col }}">
+    <div class="row">
+      <div class="col-2">
+        <label>{{ label }}</label>
+      </div>
+      <div class="col-10">
+        <input
+          nbInput
+          placeholder="Pick Date"
+          fullWidth
+          [(ngModel)]="value"
+          [nbDatepicker]="formpicker"
+        />
+        <nb-datepicker [min]="min" [max]="max" #formpicker [format]="format"></nb-datepicker>
+        <div *ngIf="showMessage">{{ message }}</div>
+      </div>
+    </div>
+  </div>
+</div>

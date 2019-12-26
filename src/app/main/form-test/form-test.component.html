@@ -1,3 +1,49 @@
-<button (click)="onclick()">click</button>
+<form>
+  <app-input-string
+    label="Họ và tên"
+    placeholder="Full name"
+    data="name"
+    require="true"
+    minLength="4"
+    maxLength="12"
+    #apptest
+  ></app-input-string>
 
-<app-test #apptest></app-test>
+  <app-input-string
+    label="Số điện thoại"
+    placeholder="Number"
+    require="true"
+    mark="+00-000-000-000"
+    #apptest2
+  ></app-input-string>
+  <app-input-string
+    label="Địa chỉ"
+    placeholder="Address"
+    disabled="true"
+    #apptest3
+  ></app-input-string>
+  <app-input-number
+    label="Số tiền"
+    type="number"
+    placeholder="Amount"
+    mark="separator"
+    thousandSeparator="."
+    #appInputNumber
+  ></app-input-number>
+  <app-input-string
+    label="Giờ"
+    placeholder="Time"
+    mark="00:00"
+    #apptest5
+  ></app-input-string>
+  <app-input-date
+    label="Ngày"
+    type="number"
+    placeholder="Date"
+    min="2019-12-10"
+    max="2019-12-30"
+    format="dd-MM-yyyy"
+    #appInputDate
+  ></app-input-date>
+</form>
+<button (click)="onclick()">click</button>

@@ -1,19 +1,40 @@
-export abstract class BaseEditorComponent<TOption> {
+export class optionsValidate {
+  minLength?: number;
+  maxLength?: number;
+}
+
+export abstract class   BaseEditorComponent<TOption> {
   constructor(private options?: TOption) {}
 
-  private _value;
+  public _value;
   getValue() {
     return this._value;
   }
 
   setValue(v) {
-    this.onValueChange(v);
-    this._value = v;
-    this.onEditedValue(v);
-
-    let b = this.onValidateValue(v);
-    if (!b) {
+    if (this.onValueChange) {
+      this.onValueChange(v);
     }
+
+    this._value = v;
+    if (this.onEditedValue) {
+      this.onEditedValue(v);
+    }
+  }
+
+  validateMinLength(value, number: number): boolean {
+    let result = value.split("").length;
+    if (result < number) {
+      return true;
+    }
+    return false;
+  }
+  validateMaxLength(value, number: number): boolean {
+    let result = value.split("").length;
+    if (result > number) {
+      return true;
+    }
+    return false;
   }
 
   isReadonly: boolean;

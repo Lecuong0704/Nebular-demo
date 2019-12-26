@@ -11,16 +11,25 @@ import {
   NbInputModule,
   NbSearchModule,
   NbActionsModule,
-  NbIconModule
+  NbIconModule,
+  NbDatepicker,
+  NbDatepickerModule
 } from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
-import { TestComponent } from "./test/test.component";
 import { BaseEditorComponent } from "../editor/base-editor-component";
 import { FormsModule } from "@angular/forms";
 import { FormTestComponent } from './form-test/form-test.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { InputNumberComponent } from './input-number/input-number.component';
+import { InputStringComponent } from './input-string/input-string.component';
+import { InputDateComponent } from './input-date/input-date.component'
+import { NbDateFnsDateModule } from '@nebular/date-fns';
+import { NbMomentDateModule } from '@nebular/moment';
+
+export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
-  declarations: [MainComponent, TestComponent, FormTestComponent],
+  declarations: [MainComponent, FormTestComponent, InputNumberComponent, InputStringComponent, InputDateComponent],
   imports: [
     FormsModule,
     CommonModule,
@@ -33,7 +42,11 @@ import { FormTestComponent } from './form-test/form-test.component';
     NbButtonModule,
     NbCardModule,
     NbIconModule,
-    NbEvaIconsModule
+    NbDatepickerModule,
+    NbDateFnsDateModule,
+    // NbMomentDateModule,
+    NbEvaIconsModule,
+    NgxMaskModule.forRoot(options)
   ]
 })
 export class MainModule {}
