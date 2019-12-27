@@ -13,9 +13,11 @@ export class InputStringComponent extends BaseEditorComponent<StringComponentOpt
   @Input() fieldSize: string = "medium"; // small / large
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
-  @Input() col: string = "col-12";
+  @Input() class: string = "col-12";
+  @Input() cssClassInput: string = "col-10";
+  @Input() cssClassLabel: string = "col-2";
   @Input() model: any = "";
-  @Input() type: any = "";
+  @Input() type: any = "text"; // textarea
   @Input() minLength: number;
   @Input() maxLength: number;
   public isMask;

@@ -15,6 +15,7 @@ export class FormTestComponent implements OnInit {
   @ViewChild("apptest", { static: true }) apptest: InputStringComponent;
   @ViewChild("apptest2", { static: true }) apptest2: InputStringComponent;
   @ViewChild("apptest3", { static: true }) apptest3: InputStringComponent;
+  @ViewChild("apptest4", { static: true }) apptest4: InputStringComponent;
   @ViewChild("appInputDate", { static: true }) appInputDate: InputDateComponent;
   @ViewChild("appInputNumber", { static: true })
   appInputNumber: InputNumberComponent;
@@ -160,6 +161,7 @@ export class FormTestComponent implements OnInit {
     // get value
     this.formData = {
       FullName: this.apptest.value,
+      Notes: this.apptest4.value,
       Phone: this.apptest2.value,
       Address: this.apptest3.value,
       Amount: this.appInputNumber.value,
@@ -177,6 +179,7 @@ export class FormTestComponent implements OnInit {
       this.apptest,
       this.apptest2,
       this.apptest3,
+      this.apptest4,
       this.appInputNumber,
       this.appInputDate,
       this.appInputCheckbox,

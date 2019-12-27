@@ -13,6 +13,8 @@ export class InputDateComponent extends BaseEditorComponent<any>
   @Input() placeholder: string = "";
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
+  @Input() cssClassInput: string = "col-10";
+  @Input() cssClassLabel: string = "col-2";
   @Input() class: string = "col-12";
   @Input() fieldSize: string = "medium"; // small / large
   @Input() model: any = "";

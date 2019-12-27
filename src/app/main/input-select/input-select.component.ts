@@ -14,6 +14,8 @@ export class InputSelectComponent extends BaseEditorComponent<any>
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
   @Input() multiple: boolean = false;
+  @Input() cssClassInput: string = "col-10";
+  @Input() cssClassLabel: string = "col-2";
   @Input() type: string = "default"; // multiple / group
   @Input() class: string = "col-12";
   @Input() data = [];

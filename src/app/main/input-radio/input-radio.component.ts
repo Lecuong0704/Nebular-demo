@@ -12,7 +12,9 @@ export class InputRadioComponent extends BaseEditorComponent<any>
   @Input() placeholder: string = "";
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
-  @Input() col: string = "col-12";
+  @Input() cssClassInput: string = "col-10";
+  @Input() cssClassLabel: string = "col-2";
+  @Input() class: string = "col-12";
   @Input() data = [];
   @Input() status: string = "primary";
   public showMessage = false;
