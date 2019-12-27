@@ -14,24 +14,34 @@ import {
   NbIconModule,
   NbDatepicker,
   NbDatepickerModule,
-  NbCheckboxModule
+  NbCheckboxModule,
+  NbRadioComponent,
+  NbRadioModule
 } from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { BaseEditorComponent } from "../editor/base-editor-component";
 import { FormsModule } from "@angular/forms";
-import { FormTestComponent } from './form-test/form-test.component';
-import { NgxMaskModule, IConfig } from 'ngx-mask';
-import { InputNumberComponent } from './input-number/input-number.component';
-import { InputStringComponent } from './input-string/input-string.component';
-import { InputDateComponent } from './input-date/input-date.component'
-import { NbDateFnsDateModule } from '@nebular/date-fns';
-import { NbMomentDateModule } from '@nebular/moment';
-import { InputCheckboxComponent } from './input-checkbox/input-checkbox.component';
+import { FormTestComponent } from "./form-test/form-test.component";
+import { NgxMaskModule, IConfig } from "ngx-mask";
+import { InputNumberComponent } from "./input-number/input-number.component";
+import { InputStringComponent } from "./input-string/input-string.component";
+import { InputDateComponent } from "./input-date/input-date.component";
+import { NbDateFnsDateModule } from "@nebular/date-fns";
+import { NbMomentDateModule } from "@nebular/moment";
+import { InputCheckboxComponent } from "./input-checkbox/input-checkbox.component";
+import { InputRadioComponent } from "./input-radio/input-radio.component";
 
-// export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
-  declarations: [MainComponent, FormTestComponent, InputNumberComponent, InputStringComponent, InputDateComponent, InputCheckboxComponent],
+  declarations: [
+    MainComponent,
+    FormTestComponent,
+    InputNumberComponent,
+    InputStringComponent,
+    InputDateComponent,
+    InputCheckboxComponent,
+    InputRadioComponent
+  ],
   imports: [
     FormsModule,
     CommonModule,
@@ -47,7 +57,7 @@ import { InputCheckboxComponent } from './input-checkbox/input-checkbox.componen
     NbDatepickerModule,
     NbDateFnsDateModule,
     NbCheckboxModule,
-    // NbMomentDateModule,
+    NbRadioModule,
     NbEvaIconsModule,
     NgxMaskModule.forRoot()
   ]

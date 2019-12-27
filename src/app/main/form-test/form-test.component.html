@@ -41,19 +41,28 @@
     #appInputDate
   ></app-input-date>
   <app-input-checkbox
-    label="Grounp checkbox:"
+    key="Checkbox test"
+    class="offset-md-2 offset-sm-2 offset-lg-2 col-10"
+    status="danger"
+    checked="true"
+    #appInputCheckbox2
+  ></app-input-checkbox> 
+  <app-input-checkbox
+    label="Group checkbox:"
     key="Checkbox test"
     [options]="options"
     group="true"
     #appInputCheckbox
-    ></app-input-checkbox>
-  <app-input-checkbox
-    key="Checkbox test"
+  ></app-input-checkbox>
+  
+  <app-input-radio
+    status="success"
+    label="Radio"
     checked="false"
-    #appInputCheckbox2
-    ></app-input-checkbox>
+    [options]="listOptionRadio"
+    #appInputRadio
+  ></app-input-radio>
 </form>
-<!-- <button (click)="onclick()">click</button> -->
 <button (click)="onclick()" class="mt-3 float-right" nbButton>
   <nb-icon icon="star"></nb-icon>Check value
 </button>

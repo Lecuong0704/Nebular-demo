@@ -1,21 +1,19 @@
 <div *ngIf="group">
   <div class="row">
-    <div class="{{ col }}">
+    <div class="{{ class }}">
       <div class="row">
         <div class="col-2">
           <label>{{ label }}</label>
         </div>
         <div class="col-10">
           <div class="row">
-            <div
-              *ngFor="let opt of options | keyvalue: originalOrder"
-              class="col-12"
-            >
+            <div *ngFor="let opt of options" class="col-12">
               <nb-checkbox
                 [status]="status"
-                (click)="change(opt.key)"
+                disabled="false"
+                (checkedChange)="change(opt.label, $event)"
                 [checked]="opt.value"
-                >{{ opt.key }}
+                >{{ opt.label }}
               </nb-checkbox>
             </div>
           </div>
@@ -27,11 +25,15 @@
 </div>
 
 <div *ngIf="!group">
-  <div class="{{ col }}">
-    <div class="row">
-      <nb-checkbox [status]="status" [(ngModel)]="value" [checked]="value"
-        >{{ key }}
-      </nb-checkbox>
+  <div class="row">
+    <div class="{{ class }}">
+      <div class="row">
+        <div class="col-12">
+          <nb-checkbox [status]="status" [(ngModel)]="value" [checked]="value"
+            >{{ key }}
+          </nb-checkbox>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -13,8 +13,8 @@ export class InputCheckboxComponent extends BaseEditorComponent<any>
   @Input() placeholder: string = "";
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
-  @Input() col: string = "col-12";
-  @Input() options = {};
+  @Input() class: string = "col-12";
+  @Input() options = [];
   @Input() status: string = "primary";
   @Input() key: string = "";
   @Input() group: boolean = false;
@@ -30,44 +30,52 @@ export class InputCheckboxComponent extends BaseEditorComponent<any>
   ngOnInit() {
     if (this.checked == "true") {
       this.setValue(true);
+    }else{
+      this.setValue(false);
     }
   }
 
-  change(k) {
-    for (let i in this.options) {
-      if (i == k) {
-        if (this.options[i]) {
-          this.options[i] = false;
-        } else {
-          this.options[i] = true;
-        }
+  change(l, v) {
+    this.options.forEach(x => {
+      if (x.label == l) {
+        x.value = v;
       }
-    }
+    });
+
     this.setValue(this.options);
   }
 
-  originalOrder = (
-    a: KeyValue<number, string>,
-    b: KeyValue<number, string>
-  ): number => {
-    return 0;
-  };
-
-
   getValue() {
-    let v = this._value;
+    let v;
+    if(this.group){
+      let result = [];
+      this.options.forEach(x => {
+        if (x.value) {
+          result.push(x.label);
+        }
+      });
+      v = result;
+    }else{
+      v = this._value
+    }
     return v;
   }
 
   setValue(v) {
     if (this.group) {
-      this._value = this.options;
+      let result = [];
+      this.options.forEach(x => {
+        if (x.value) {
+          result.push(x.label);
+        }
+      });
+      this._value = result;
     } else {
       this._value = v;
     }
   }
 
-  get value(): number {
+  get value() {
     return this.getValue();
   }
 

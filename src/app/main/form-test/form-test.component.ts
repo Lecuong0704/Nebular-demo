@@ -3,7 +3,8 @@ import { FormGroup } from "@angular/forms";
 import { InputStringComponent } from "../input-string/input-string.component";
 import { InputNumberComponent } from "../input-number/input-number.component";
 import { InputDateComponent } from "../input-date/input-date.component";
-import { InputCheckboxComponent } from '../input-checkbox/input-checkbox.component';
+import { InputCheckboxComponent } from "../input-checkbox/input-checkbox.component";
+import { InputRadioComponent } from "../input-radio/input-radio.component";
 
 @Component({
   selector: "app-form-test",
@@ -17,20 +18,49 @@ export class FormTestComponent implements OnInit {
   @ViewChild("appInputNumber", { static: true })
   appInputNumber: InputNumberComponent;
   @ViewChild("appInputDate", { static: true }) appInputDate: InputDateComponent;
-  @ViewChild("appInputCheckbox", { static: true }) appInputCheckbox: InputCheckboxComponent;
-  @ViewChild("appInputCheckbox2", { static: true }) appInputCheckbox2: InputCheckboxComponent;
+  @ViewChild("appInputCheckbox", { static: true })
+  appInputCheckbox: InputCheckboxComponent;
+  @ViewChild("appInputCheckbox2", { static: true })
+  appInputCheckbox2: InputCheckboxComponent;
+  @ViewChild("appInputRadio", { static: true })
+  appInputRadio: InputRadioComponent;
 
   public model: any = {};
   public formData;
   public form;
-  public options = {
-    "Đá bóng": true,
-    "Cầu lông": false,
-    "Bóng bàn": false,
-    "Bơi lội": true,
-    "E-Sport": true,
-    "LOL": false
-  };
+  public options = [
+    {
+      label: "Đá bóng",
+      value: true,
+      disabled: true
+    },
+    {
+      label: "Cầu lông",
+      value: false,
+      disabled: true
+    },
+    {
+      label: "Bóng bàn",
+      value: false,
+      disabled: true
+    },
+    {
+      label: "Bơi lội",
+      value: true,
+      disabled: true
+    },
+    {
+      label: "E-Sport",
+      value: true,
+      disabled: true
+    }
+  ];
+  public listOptionRadio = [
+    { value: "This is value 1", label: "Option 1", checked: true },
+    { value: "This is value 2", label: "Option 2" },
+    { value: "This is value 3", label: "Option 3" },
+    { value: "This is value 4", label: "Option 4", disabled: true }
+  ];
   constructor() {}
 
   ngOnInit() {}
@@ -44,7 +74,8 @@ export class FormTestComponent implements OnInit {
       Amount: this.appInputNumber.value,
       Date: this.appInputDate.value,
       CheckboxGroup: this.appInputCheckbox.value,
-      Checkbox: this.appInputCheckbox2.value
+      Checkbox: this.appInputCheckbox2.value,
+      Radio: this.appInputRadio.value
     };
 
     // list check require
