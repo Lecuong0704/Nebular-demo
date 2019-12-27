@@ -12,7 +12,8 @@ export class InputNumberComponent extends BaseEditorComponent<any>
   @Input() placeholder: string = "";
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
-  @Input() col: string = "col-12";
+  @Input() class: string = "col-12";
+  @Input() fieldSize: string = "medium"; // small / large
   @Input() model: any = "";
   @Input() type: any = "";
   @Input() minLength: number;
@@ -27,7 +28,11 @@ export class InputNumberComponent extends BaseEditorComponent<any>
     super();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.require) {
+      this.IsRequire = true;
+    }
+  }
 
   convertStringToNumber(numberString) {
     let arr = numberString.split(".");

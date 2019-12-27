@@ -10,6 +10,7 @@ export interface StringComponentOptions {}
 export class InputStringComponent extends BaseEditorComponent<StringComponentOptions> implements OnInit {
   @Input() label: string = "";
   @Input() placeholder: string = "";
+  @Input() fieldSize: string = "medium"; // small / large
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
   @Input() col: string = "col-12";

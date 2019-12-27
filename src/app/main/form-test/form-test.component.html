@@ -3,7 +3,7 @@
     label="Họ và tên:"
     placeholder="Full name"
     data="name"
-    require="true"
+    [require]="false"
     minLength="4"
     maxLength="12"
     #apptest
@@ -12,18 +12,21 @@
   <app-input-number
     label="Số điện thoại:"
     placeholder="Phone number"
-    require="true"
+    [require]="false"
     mask="+00-000-000-000"
     #apptest2
   ></app-input-number>
+
   <app-input-string
     label="Địa chỉ:"
     placeholder="Address"
     disabled="true"
     #apptest3
   ></app-input-string>
+
   <app-input-number
     label="Số tiền:"
+    [require]="false"
     type="number"
     placeholder="Amount"
     mask="separator"
@@ -31,35 +34,74 @@
     thousandSeparator="."
     #appInputNumber
   ></app-input-number>
+
   <app-input-date
     label="Ngày:"
     type="number"
+    [require]="false"
     placeholder="Click to choose"
     format="dd-MM-yyyy"
     min="2019-12-10"
     max="2019-12-30"
     #appInputDate
   ></app-input-date>
+
+  <app-input-select
+    fieldSize="small"
+    disabled="false"
+    shape="round"
+    [data]="dataSelect"
+    placeholder="Select Showcase"
+    label="Select:"
+    [require]="false"
+    #appInputSelect
+  ></app-input-select>
+
+  <app-input-select
+    type="group"
+    [require]="false"
+    [data]="dataSelectGroup"
+    [disabled]="false"
+    shape="semi-round"
+    placeholder="Select Showcase"
+    label="Select group:"
+    #appInputSelect2
+  ></app-input-select>
+
+  <app-input-select
+    type="multiple"
+    [require]="false"
+    [data]="dataSelectMultiple"
+    [disabled]="false"
+    shape="rectangle"
+    placeholder="Select multiple"
+    label="Select multiple:"
+    #appInputSelect3
+  ></app-input-select>
+
   <app-input-checkbox
     key="Checkbox test"
     class="offset-md-2 offset-sm-2 offset-lg-2 col-10"
     status="danger"
-    checked="true"
+    [disabled]="false"
+    [checked]="false"
     #appInputCheckbox2
-  ></app-input-checkbox> 
+  ></app-input-checkbox>
+
   <app-input-checkbox
     label="Group checkbox:"
     key="Checkbox test"
+    [disabled]="true"
     [options]="options"
-    group="true"
+    [group]="true"
     #appInputCheckbox
   ></app-input-checkbox>
-  
+
   <app-input-radio
     status="success"
+    [disabled]="false"
     label="Radio"
-    checked="false"
-    [options]="listOptionRadio"
+    [data]="listDataRadio"
     #appInputRadio
   ></app-input-radio>
 </form>

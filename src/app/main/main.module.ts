@@ -16,7 +16,8 @@ import {
   NbDatepickerModule,
   NbCheckboxModule,
   NbRadioComponent,
-  NbRadioModule
+  NbRadioModule,
+  NbSelectModule
 } from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { BaseEditorComponent } from "../editor/base-editor-component";
@@ -30,6 +31,7 @@ import { NbDateFnsDateModule } from "@nebular/date-fns";
 import { NbMomentDateModule } from "@nebular/moment";
 import { InputCheckboxComponent } from "./input-checkbox/input-checkbox.component";
 import { InputRadioComponent } from "./input-radio/input-radio.component";
+import { InputSelectComponent } from './input-select/input-select.component';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { InputRadioComponent } from "./input-radio/input-radio.component";
     InputStringComponent,
     InputDateComponent,
     InputCheckboxComponent,
-    InputRadioComponent
+    InputRadioComponent,
+    InputSelectComponent
   ],
   imports: [
     FormsModule,
@@ -58,6 +61,7 @@ import { InputRadioComponent } from "./input-radio/input-radio.component";
     NbDateFnsDateModule,
     NbCheckboxModule,
     NbRadioModule,
+    NbSelectModule,
     NbEvaIconsModule,
     NgxMaskModule.forRoot()
   ]

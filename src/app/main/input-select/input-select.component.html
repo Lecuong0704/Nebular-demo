@@ -1,0 +1,102 @@
+<div *ngIf="type == 'group'">
+  <div class="row">
+    <div class="{{ class }}">
+      <div class="row">
+        <div class="col-2">
+          <label>{{ label }}</label>
+        </div>
+        <div class="col-10">
+          <div class="row">
+            <div class="col-12">
+              <nb-select
+                [shape]="shape"
+                [placeholder]="placeholder"
+                [(selected)]="selectedItem"
+                [disabled]="disabled"
+                fullWidth
+                [(ngModel)]="value"
+              >
+                <nb-option-group *ngFor="let d of data" [title]="d.title">
+                  <nb-option
+                    *ngFor="let i of d.data"
+                    [value]="i.value"
+                    [disabled]="i.disabled"
+                    >{{ i.label }}</nb-option
+                  >
+                </nb-option-group>
+              </nb-select>
+              <div *ngIf="showMessage">{{ messageError }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="type == 'default'">
+  <div class="row">
+    <div class="{{ class }}">
+      <div class="row">
+        <div class="col-2">
+          <label>{{ label }}</label>
+        </div>
+        <div class="col-10">
+          <div class="row">
+            <div class="col-12">
+              <nb-select
+                [(ngModel)]="value"
+                [shape]="shape"
+                [placeholder]="placeholder"
+                [(selected)]="selectedItem"
+                [disabled]="disabled"
+                fullWidth
+              >
+                <nb-option value="">Option empty</nb-option>
+                <nb-option
+                  *ngFor="let d of data"
+                  [value]="d.value"
+                  [disabled]="d.disabled"
+                  >{{ d.label }}</nb-option
+                >
+              </nb-select>
+              <div *ngIf="showMessage">{{ messageError }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="type == 'multiple'">
+  <div class="row">
+    <div class="{{ class }}">
+      <div class="row">
+        <div class="col-2">
+          <label>{{ label }}</label>
+        </div>
+        <div class="col-10">
+          <div class="row">
+            <div class="col-12">
+                <nb-select
+                multiple
+                [(ngModel)]="value"
+                [shape]="shape"
+                [placeholder]="placeholder"
+                [disabled]="disabled"
+                fullWidth
+              >
+                <nb-option
+                  *ngFor="let d of data"
+                  [value]="d.value"
+                  [disabled]="d.disabled"
+                  >{{ d.label }}</nb-option
+                >
+              </nb-select>
+              <div *ngIf="showMessage">{{ messageError }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

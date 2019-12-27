@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="{{ col }}">
+  <div class="{{ class }}">
     <div class="row">
       <div class="col-2">
         <label>{{ label }}</label>
@@ -9,11 +9,13 @@
           nbInput
           [placeholder]="placeholder"
           fullWidth
+          [fieldSize]="fieldSize"
+          [disabled]="disabled"
           [(ngModel)]="value"
           [nbDatepicker]="formpicker"
         />
         <nb-datepicker [min]="min" [max]="max" #formpicker [format]="format"></nb-datepicker>
-        <div *ngIf="showMessage">{{ message }}</div>
+        <div *ngIf="showMessage">{{ messageError }}</div>
       </div>
     </div>
   </div>

@@ -1,7 +1,4 @@
-export class optionsValidate {
-  minLength?: number;
-  maxLength?: number;
-}
+
 
 export abstract class   BaseEditorComponent<TOption> {
   constructor(public options?: TOption) {}

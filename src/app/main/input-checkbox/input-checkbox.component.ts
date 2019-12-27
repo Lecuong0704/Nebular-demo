@@ -18,17 +18,19 @@ export class InputCheckboxComponent extends BaseEditorComponent<any>
   @Input() status: string = "primary";
   @Input() key: string = "";
   @Input() group: boolean = false;
-  @Input() checked: string = "false";
+  @Input() checked: boolean = false;
+
+  @Input() messageError: string = "Value is not a valid";
   public showMessage = false;
   public isRequire: boolean = false;
-  public message: string = "Value is not a valid";
 
   constructor() {
     super();
   }
 
   ngOnInit() {
-    if (this.checked == "true") {
+ 
+    if (this.checked) {
       this.setValue(true);
     }else{
       this.setValue(false);

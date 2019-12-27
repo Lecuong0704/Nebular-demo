@@ -1,53 +1,51 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { BaseEditorComponent } from "src/app/editor/base-editor-component";
-import { NbDateService } from '@nebular/theme';
 
 @Component({
-  selector: "app-input-date",
-  templateUrl: "./input-date.component.html",
-  styleUrls: ["./input-date.component.less"]
+  selector: "app-input-select",
+  templateUrl: "./input-select.component.html",
+  styleUrls: ["./input-select.component.less"]
 })
-export class InputDateComponent extends BaseEditorComponent<any>
+export class InputSelectComponent extends BaseEditorComponent<any>
   implements OnInit {
   @Input() label: string = "";
   @Input() placeholder: string = "";
+  @Input() shape: string = "";
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
+  @Input() multiple: boolean = false;
+  @Input() type: string = "default"; // multiple / group
   @Input() class: string = "col-12";
-  @Input() fieldSize: string = "medium"; // small / large
-  @Input() model: any = "";
-  @Input() type: any = "";
-  @Input() min: Date;
-  @Input() max: Date;
-  @Input() format: any="dd/MM/yyyy";
+  @Input() data = [];
   @Input() messageError: string = "Value is not a valid";
-
   public showMessage = false;
   public isRequire: boolean = false;
 
-  constructor(protected dateService: NbDateService<Date>) {
+  constructor() {
     super();
   }
-  
+
   ngOnInit() {
     if (this.require) {
       this.IsRequire = true;
     }
-    this.min = new Date(this.min)
-    this.max = new Date(this.max)
+    if(this.type == 'multiple'){
+      this.setValue([])
+    }
   }
-  getValue(): Date {
-    let v = this._value; // number
+  getValue() {
+    let v = this._value;
     return v;
   }
+
   setValue(v) {
     this._value = v;
     // check require
     if (this.require) {
-      if (this.value == null || this.value == undefined) {
+      if (this.value == null || this.value == undefined || this.value == "") {
         this.showMessage = true;
         this.setRequire(true);
-        this.messageError = `Value is not a valid`;
+        this.messageError = `Bạn chưa có lựa chọn nào`;
         return;
       } else {
         this.showMessage = false;
@@ -56,7 +54,7 @@ export class InputDateComponent extends BaseEditorComponent<any>
     }
   }
 
-  get value(): Date {
+  get value() {
     return this.getValue();
   }
 

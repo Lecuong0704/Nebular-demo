@@ -13,7 +13,7 @@ export class InputRadioComponent extends BaseEditorComponent<any>
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
   @Input() col: string = "col-12";
-  @Input() options = [];
+  @Input() data = [];
   @Input() status: string = "primary";
   public showMessage = false;
   public isRequire: boolean = false;
@@ -23,7 +23,10 @@ export class InputRadioComponent extends BaseEditorComponent<any>
     super();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    let checked = this.data.filter(x=>x.checked == true)[0]
+    this.setValue(checked.value)
+  }
 
   getValue() {
     let v = this._value;
