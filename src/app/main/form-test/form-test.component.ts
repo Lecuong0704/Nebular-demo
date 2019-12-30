@@ -16,6 +16,7 @@ export class FormTestComponent implements OnInit {
   @ViewChild("apptest2", { static: true }) apptest2: InputStringComponent;
   @ViewChild("apptest3", { static: true }) apptest3: InputStringComponent;
   @ViewChild("apptest4", { static: true }) apptest4: InputStringComponent;
+  @ViewChild("apptest5", { static: true }) apptest5: InputStringComponent;
   @ViewChild("appInputDate", { static: true }) appInputDate: InputDateComponent;
   @ViewChild("appInputNumber", { static: true })
   appInputNumber: InputNumberComponent;
@@ -154,7 +155,7 @@ export class FormTestComponent implements OnInit {
     }
   ];
   constructor() {}
-
+  public isValidEmailDomain = ["hopnhat.vn", "gmail.vn", "gmail.com"];
   ngOnInit() {}
 
   onclick() {
@@ -164,6 +165,7 @@ export class FormTestComponent implements OnInit {
       Notes: this.apptest4.value,
       Phone: this.apptest2.value,
       Address: this.apptest3.value,
+      Email: this.apptest5.value,
       Amount: this.appInputNumber.value,
       Date: this.appInputDate.value,
       CheckboxGroup: this.appInputCheckbox.value,
@@ -180,6 +182,7 @@ export class FormTestComponent implements OnInit {
       this.apptest2,
       this.apptest3,
       this.apptest4,
+      this.apptest5,
       this.appInputNumber,
       this.appInputDate,
       this.appInputCheckbox,

@@ -1,25 +1,70 @@
 <div class="row">
-    <div class="{{ class }}">
-      <div class="row">
-        <div class="{{ cssClassLabel }}">
-          <label>{{ label }}</label>
-        </div>
-        <div class="{{ cssClassInput }}">
-          <input
+  <div class="{{ class }}">
+    <div class="row">
+      <div class="{{ cssClassLabel }}">
+        <label>{{ label }}</label>
+      </div>
+      <div class="{{ cssClassInput }}">
+        <input
           *ngIf="type == 'text'"
-            #input
-            type="text"
-            nbInput
-            [fieldSize]="fieldSize"
-            [placeholder]="placeholder"
-            fullWidth
-            disabled="{{ disabled }}"
-            [(ngModel)]="value"
-            />
-            <textarea *ngIf="type == 'textarea'" [(ngModel)]="value" nbInput fullWidth [placeholder]="placeholder"></textarea>
-          <div *ngIf="showMessage">{{ message }}</div>
+          #input
+          type="text"
+          nbInput
+          [fieldSize]="fieldSize"
+          [placeholder]="placeholder"
+          fullWidth
+          disabled="{{ disabled }}"
+          [(ngModel)]="value"
+        />
+        <textarea
+          *ngIf="type == 'textarea'"
+          [(ngModel)]="value"
+          nbInput
+          fullWidth
+          [placeholder]="placeholder"
+        ></textarea>
+        <div *ngIf="type == 'email'">
+          <div class="row justify-content-between">
+            <div class="col-7">
+              <input
+                nbInput
+                fullWidth
+                [placeholder]="placeholderEmail"
+                [(ngModel)]="email"
+                (ngModelChange)="change()"
+              />
+            </div>
+            <span class="at-sign">@</span>
+            <div class="col-4">
+              <input
+                nbInput
+                fullWidth
+                [placeholder]="placeholderEmailDomain"
+                [(ngModel)]="emailDomain"
+                (ngModelChange)="change()"
+              />
+            </div>
+          </div>
         </div>
+        <div *ngIf="showMessage">{{ message }}</div>
       </div>
     </div>
   </div>
-  
+</div>
+
+<!-- <input
+          nbInput
+          *ngIf="type == 'email'"
+          fullWidth
+          [(ngModel)]="value"
+          onChange="change()"
+          [pattern]="pattern"
+          [placeholder]="placeholder"
+          #email="ngModel"
+          [required]="setRequire(email.invalid)"
+          /> -->
+<!-- [attr.aria-invalid]="email.invalid && email.touched ? true : null"
+          [status]="
+          autofocus
+            email.dirty ? (email.invalid ? 'danger' : 'success') : 'basic'
+          " -->

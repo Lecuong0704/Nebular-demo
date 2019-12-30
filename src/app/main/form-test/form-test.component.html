@@ -17,6 +17,20 @@
     [require]="false"
     maxLength="30"
     #apptest4
+    ></app-input-string>
+    <app-input-string
+    label="Email:"
+    placeholder="Email"
+    data="name"
+    type="email"
+    defaultValue="cuongld@hopnhat.vn"
+    placeholderEmail='Email...'
+    placeholderEmailDomain ="gmail.com"
+    [isValidEmailDomain]="isValidEmailDomain"
+    cssClass="col-10"
+    [require]="true"
+    maxLength="30"
+    #apptest5
   ></app-input-string>
 
   <app-input-number
