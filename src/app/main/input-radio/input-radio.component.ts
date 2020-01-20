@@ -12,8 +12,8 @@ export class InputRadioComponent extends BaseEditorComponent<any>
   @Input() placeholder: string = "";
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
-  @Input() cssClassInput: string = "col-10";
-  @Input() cssClassLabel: string = "col-2";
+  @Input() cssClassInput: string = "";
+  @Input() cssClassLabel: string = "";
   @Input() class: string = "col-12";
   @Input() data = [];
   @Input() status: string = "primary";

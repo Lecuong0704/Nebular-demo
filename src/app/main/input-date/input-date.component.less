@@ -1,3 +1,18 @@
-label{
-    line-height: 40px;
+:host {
+  --widthLable: 150px;
+  .label {
+    width: var(--widthLable);
+    padding: 0 15px;
+    label {
+      margin: 12px 0 0 0;
+      color: #333;
+    }
+  }
+  .input {
+    width: calc(100% - var(--widthLable));
+    padding: 0 15px;
+    input {
+      margin-bottom: 15px;
+    }
+  }
 }

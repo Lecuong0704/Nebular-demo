@@ -10,7 +10,6 @@ import {
   NbCardModule,
   NbInputModule,
   NbSearchModule,
-  NbSidebarService,
   NbActionsModule,
   NbIconModule,
   NbDatepickerModule,
@@ -18,28 +17,24 @@ import {
 } from "@nebular/theme";
 import { AppRoutingModule } from "./app-routing.module";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
-import { NbDateFnsDateModule } from "@nebular/date-fns";
-import { NbMomentDateModule } from "@nebular/moment";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
     NbThemeModule.forRoot(),
-    AppRoutingModule,
     NbDatepickerModule.forRoot(),
+    NbSidebarModule.forRoot(),
+    BrowserModule,
+    AppRoutingModule,
     NbCardModule,
     NbSearchModule,
     NbActionsModule,
     NbInputModule,
-    NbSidebarModule.forRoot(),
     NbLayoutModule,
     NbButtonModule,
     NbIconModule,
     NbEvaIconsModule,
     NbCalendarRangeModule,
-    // NbDateFnsDateModule,
-    // NbMomentDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -32,6 +32,8 @@ export class FormTestComponent implements OnInit {
   appInputSelect2: InputSelectComponent;
   @ViewChild("appInputSelect3", { static: true })
   appInputSelect3: InputSelectComponent;
+  @ViewChild("appInputUploadFile", { static: true })
+  appInputUploadFile: InputSelectComponent;
 
   public model: any = {};
   public formData;
@@ -158,6 +160,7 @@ export class FormTestComponent implements OnInit {
   public isValidEmailDomain = ["hopnhat.vn", "gmail.vn", "gmail.com"];
   ngOnInit() {}
 
+
   onclick() {
     // get value
     this.formData = {
@@ -173,7 +176,8 @@ export class FormTestComponent implements OnInit {
       Radio: this.appInputRadio.value,
       Select: this.appInputSelect.value,
       SelectGroup: this.appInputSelect2.value,
-      SelectMultiple: this.appInputSelect3.value
+      SelectMultiple: this.appInputSelect3.value,
+      FileUpload: this.appInputUploadFile.value
     };
 
     // list check require
@@ -190,7 +194,8 @@ export class FormTestComponent implements OnInit {
       this.appInputRadio,
       this.appInputSelect,
       this.appInputSelect2,
-      this.appInputSelect3
+      this.appInputSelect3,
+      this.appInputUploadFile
     ];
 
     // check the require with for loop

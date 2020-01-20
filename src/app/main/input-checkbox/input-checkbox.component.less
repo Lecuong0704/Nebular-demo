@@ -1,0 +1,19 @@
+:host {
+    --widthLable: 150px;
+    .label {
+      width: var(--widthLable);
+      padding: 0 15px;
+      label {
+        margin-top: 4px;
+        color: #333;
+      }
+    }
+    .input {
+      width: calc(100% - var(--widthLable));
+      padding: 0 15px;
+      ::ng-deep .select-button {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  

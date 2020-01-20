@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="{{ class }}">
+    <div class="row">
+      <div class="label {{ cssClassLabel }}">
+        <label>{{ label }}</label>
+      </div>
+      <div class="input {{ cssClassInput }}">
+        <div class="btn-upload-wrap">
+          <input
+            type="file"
+            id="file"
+            (input)="handleFileInput($event)"
+            multiple
+            #input
+            />
+            <!-- (change)="handleFileInput($event.target.files)" -->
+          <button class="btn btn-secondary btn-sm" (click)="targetInput()">
+            <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>
+            Upload
+          </button>
+        </div>
+        <div class="item-wrap clear-fix">
+          <div class="float-left " *ngFor="let i of listImageShow">
+            <div class="item-box">
+              <button class="delete-file" (click)="deleteFile(i.name)">
+                <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+              </button>
+              <img
+                class="item"
+                src="assets/icon-upload/{{ i.icon }}.png"
+                [alt]="i.name"
+                [title]="i.name"
+              />
+            </div>
+          </div>
+        </div>
+        <div *ngIf="showMessage">{{ message }}</div>
+      </div>
+    </div>
+  </div>
+</div>

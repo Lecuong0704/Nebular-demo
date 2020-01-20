@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input ,HostListener, Directive } from "@angular/core";
 import { BaseEditorComponent } from "src/app/editor/base-editor-component";
-// declare $ const require: any;
 export interface StringComponentOptions {}
 
 @Component({
@@ -8,6 +7,9 @@ export interface StringComponentOptions {}
   templateUrl: "./input-string.component.html",
   styleUrls: ["./input-string.component.less"]
 })
+
+@Directive({selector: '#textareaId'})
+
 export class InputStringComponent
   extends BaseEditorComponent<StringComponentOptions>
   implements OnInit {
@@ -17,8 +19,8 @@ export class InputStringComponent
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
   @Input() class: string = "col-12";
-  @Input() cssClassInput: string = "col-10";
-  @Input() cssClassLabel: string = "col-2";
+  @Input() cssClassInput: string = "";
+  @Input() cssClassLabel: string = "";
   @Input() model: any = "";
   @Input() type: any = "text"; // textarea / email
   @Input() minLength: number;
@@ -35,6 +37,8 @@ export class InputStringComponent
   public emailDomain: string;
   @Input() isValidEmailDomain = [];
 
+
+
   constructor() {
     super();
   }
@@ -50,7 +54,10 @@ export class InputStringComponent
       this.setValue(this.defaultValue);
       this.change();
     }
+  
   }
+
+  
   change() {
     let result = `${this.email}@${this.emailDomain}`;
     if (this.require && this.type == "email") {
@@ -96,15 +103,15 @@ export class InputStringComponent
     if (this.isValidEmailDomain.length > 0) {
       check = this.isValidEmailDomain.find(x => x == this.emailDomain);
     } else {
-      return  true;
+      return true;
     }
     if (check == null || check == undefined || check == "") {
-      return  false;
+      return false;
     } else {
       this.message = "";
       this.showMessage = false;
       this.setRequire(false);
-      return  true;
+      return true;
     }
   }
 

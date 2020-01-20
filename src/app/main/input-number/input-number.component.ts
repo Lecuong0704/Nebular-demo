@@ -13,8 +13,8 @@ export class InputNumberComponent extends BaseEditorComponent<any>
   @Input() disabled: boolean = false;
   @Input() require: boolean = false;
   @Input() class: string = "col-12";
-  @Input() cssClassInput: string = "col-10";
-  @Input() cssClassLabel: string = "col-2";
+  @Input() cssClassInput: string = "";
+  @Input() cssClassLabel: string = "";
   @Input() fieldSize: string = "medium"; // small / large
   @Input() model: any = "";
   @Input() type: any = "";

@@ -1,13 +1,27 @@
 <form>
-  <app-input-string
-    label="Họ và tên:"
-    placeholder="Full name"
-    data="name"
-    [require]="false"
-    minLength="4"
-    maxLength="12"
-    #apptest
-  ></app-input-string>
+  <div class="row">
+    <div class="col-6">
+      <app-input-string
+        label="Họ và tên:"
+        placeholder="Full name"
+        data="name"
+        [require]="false"
+        minLength="4"
+        maxLength="12"
+        #apptest
+      ></app-input-string>
+    </div>
+    <div class="col-6">
+      <app-input-string
+        label="Địa chỉ:"
+        placeholder="Address"
+        disabled="true"
+        #apptest3
+      ></app-input-string>
+    </div>
+    
+  </div>
+
   <app-input-string
     label="Notes:"
     placeholder="Description ..."
@@ -17,15 +31,15 @@
     [require]="false"
     maxLength="30"
     #apptest4
-    ></app-input-string>
-    <app-input-string
+  ></app-input-string>
+  <app-input-string
     label="Email:"
     placeholder="Email"
     data="name"
     type="email"
     defaultValue="cuongld@hopnhat.vn"
-    placeholderEmail='Email...'
-    placeholderEmailDomain ="gmail.com"
+    placeholderEmail="Email..."
+    placeholderEmailDomain="gmail.com"
     [isValidEmailDomain]="isValidEmailDomain"
     cssClass="col-10"
     [require]="true"
@@ -40,13 +54,6 @@
     mask="+00-000-000-000"
     #apptest2
   ></app-input-number>
-
-  <app-input-string
-    label="Địa chỉ:"
-    placeholder="Address"
-    disabled="true"
-    #apptest3
-  ></app-input-string>
 
   <app-input-number
     label="Số tiền:"
@@ -104,15 +111,6 @@
   ></app-input-select>
 
   <app-input-checkbox
-    key="Checkbox test"
-    class="offset-md-2 offset-sm-2 offset-lg-2 col-10"
-    status="danger"
-    [disabled]="false"
-    [checked]="false"
-    #appInputCheckbox2
-  ></app-input-checkbox>
-
-  <app-input-checkbox
     label="Group checkbox:"
     key="Checkbox test"
     [disabled]="true"
@@ -128,6 +126,18 @@
     [data]="listDataRadio"
     #appInputRadio
   ></app-input-radio>
+  <app-input-upload-file
+    label="File Upload"
+    #appInputUploadFile
+  ></app-input-upload-file>
+
+  <app-input-checkbox
+    key="Checkbox test"
+    status="danger"
+    [disabled]="false"
+    [checked]="false"
+    #appInputCheckbox2
+  ></app-input-checkbox>
 </form>
 <button (click)="onclick()" class="mt-3 float-right" nbButton>
   <nb-icon icon="star"></nb-icon>Check value

@@ -32,6 +32,7 @@ import { NbMomentDateModule } from "@nebular/moment";
 import { InputCheckboxComponent } from "./input-checkbox/input-checkbox.component";
 import { InputRadioComponent } from "./input-radio/input-radio.component";
 import { InputSelectComponent } from './input-select/input-select.component';
+import { InputUploadFileComponent } from './input-upload-file/input-upload-file.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { InputSelectComponent } from './input-select/input-select.component';
     InputDateComponent,
     InputCheckboxComponent,
     InputRadioComponent,
-    InputSelectComponent
+    InputSelectComponent,
+    InputUploadFileComponent,
   ],
   imports: [
     FormsModule,
